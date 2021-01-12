@@ -23,15 +23,15 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - What aspect of security do load balancers protect? What is the advantage of a jump box?
- - *Load balancers help protect against Denial of Service attacks, by centralizing configuration for rate limiting technical controls. Further, the load balancer is intended to spread the load of legitimate traffic over several web servers and can decide which server is best for handling the traffic based on the health of the server (Health Probes). Finally, the load balancer can act as a firewall between the assets and the internet, keeping a list of allow/deny rules (Network Security Groups).*
- - *A jump box provides a central point of access for SSH traffic for administrative purposes, while Load Balancers are used to handle HTTP traffic. Having a single point of entry means it’s easier to build in redundant security controls to invoke the principles of network segmentation, least privilege and zero trust.*
+  - *Load balancers help protect against Denial of Service attacks, by centralizing configuration for rate limiting technical controls. Further, the load balancer is intended to spread the load of legitimate traffic over several web servers and can decide which server is best for handling the traffic based on the health of the server (Health Probes). Finally, the load balancer can act as a firewall between the assets and the internet, keeping a list of allow/deny rules (Network Security Groups).*
+  - *A jump box provides a central point of access for SSH traffic for administrative purposes, while Load Balancers are used to handle HTTP traffic. Having a single point of entry means it’s easier to build in redundant security controls to invoke the principles of network segmentation, least privilege and zero trust.*
 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - What does Filebeat watch for?
- - *Filebeat is a server agent that forwards configurable log data, such as from specified directories or log events, to either Elasticsearch or Logstash.* 
+  - *Filebeat is a server agent that forwards configurable log data, such as from specified directories or log events, to either Elasticsearch or Logstash.* 
 - What does Metricbeat record?
- - *Metricbeat is a server agent that collects metrics from the operating system and services and forwards them to either Elasticsearch or Logstash.*
+  - *Metricbeat is a server agent that collects metrics from the operating system and services and forwards them to either Elasticsearch or Logstash.*
 
 The configuration details of each machine may be found below.
 
@@ -51,7 +51,7 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 
 Machines within the network can only be accessed by the jumpbox.
 - TODO: Which machine did you allow to access your ELK VM? What was its IP address?
- - The Jumpbox, IP: 20.72.210.167
+  - The Jumpbox, IP: 20.72.210.167
 
 A summary of the access policies in place can be found in the table below.
 
@@ -65,13 +65,13 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - What is the main advantage of automating configuration with Ansible?
- - *The main advantage of automating using Ansible is administrators do not have to spend as much time replicating the same work across the network. In fact, they can use the playbooks to do common tasks fast and accurately, leaving time to focus on more important matters.* 
+  - *The main advantage of automating using Ansible is administrators do not have to spend as much time replicating the same work across the network. In fact, they can use the playbooks to do common tasks fast and accurately, leaving time to focus on more important matters.* 
 
 The playbook implements the following tasks:
- - Installs Docker
- - Installs Python package installer
- - Increases virtual memory 
- - Downloads and installs the Elk Container
+  - Installs Docker
+  - Installs Python package installer
+  - Increases virtual memory 
+  - Downloads and installs the Elk Container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -80,17 +80,17 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - List the IP addresses of the machines you are monitoring
- - Web1 - 10.0.0.7
- - Web2 - 10.0.0.8
+  - Web1 - 10.0.0.7
+  - Web2 - 10.0.0.8
 
 We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed
- - [filebeat-playbook.yml](filebeat-playbook.yml)
- - [filebeat-config.yml](filebeat-config.yml)
+  - [filebeat-playbook.yml](filebeat-playbook.yml)
+  - [filebeat-config.yml](filebeat-config.yml)
 
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
- - Filebeat can be configured to collect an array of log information. In this project, we connected filebeat using default settings and used dummy data to explore the Kibana data analytics tools for notional network traffic. 
+  - *Filebeat can be configured to collect an array of log information. In this project, we connected filebeat using default settings and used dummy data to explore the Kibana data analytics tools for notional network traffic.*
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -104,12 +104,12 @@ SSH into the control node and follow the steps below:
 
 Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
- - install-elk.yml
- - filebeat-playbook.yml
- - Copy both into the ansible node
-Which file do you update to make Ansible run the playbook on a specific machine?
- - The directory you run the ansible-playbook command in 
-How do I specify which machine to install the ELK server on versus which to install Filebeat on?
- - [filebeat-config.yml](filebeat-config.yml)
-Which URL do you navigate to in order to check that the ELK server is running?
- - The public IP of the JumpboxVM at port 5601
+  - *[install-elk.yml](install-elk.yml)*
+  - *[filebeat-playbook.yml](filebeat-playbook.yml)*
+  - *Copy both into the ansible node*
+- Which file do you update to make Ansible run the playbook on a specific machine?
+  - *The directory you run the `ansible-playbook` command in* 
+- How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+  - *[filebeat-config.yml](filebeat-config.yml)*
+- Which URL do you navigate to in order to check that the ELK server is running?
+  - *The public IP of the JumpboxVM at port 5601*
