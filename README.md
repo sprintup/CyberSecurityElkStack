@@ -85,8 +85,8 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed
- - Filebeat (TODO: file forthcoming)
- - Metricbeat (TODO: file forthcoming)
+ - [filebeat-playbook.yml](filebeat-playbook.yml)
+ - [filebeat-config.yml](filebeat-config.yml)
 
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
@@ -96,7 +96,20 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [install-elk.yml](install-elk.yml) file to ansible container.
-- Update the playbook file to include two configurations for the local IP where the data is coming from (WebVMs) and where the admin can access the analytics. This second configuration will also require a NSG rule opening the same port specified in the configuration files. 
-- Run the playbook, and navigate to the IP address of the Elk container to check that the installation worked as expected.
+- Copy the [install-elk.yml](install-elk.yml) file to ansible container and run `ansible-playbook install-elk.yml`
+- Update the [filebeat-config.yml](filebeat-config.yml) file to include two configurations for the local IP where the data is coming from (WebVMs) and where the admin can access the analytics. This second configuration will also require a NSG rule opening the same port specified in the configuration files. 
+  ![kibana_config](Images/kibana_config.png)
+  ![kibana_password](Images/kibana_password.png)
+- Run the second playbook with `ansible-playbook filebeat-playbook.yml`, and navigate to the IP address of the Elk container to check that the installation worked as expected.
 
+Answer the following questions to fill in the blanks:
+- Which file is the playbook? Where do you copy it?
+ - install-elk.yml
+ - filebeat-playbook.yml
+ - Copy both into the ansible node
+Which file do you update to make Ansible run the playbook on a specific machine?
+ - The directory you run the ansible-playbook command in 
+How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+ - [filebeat-config.yml](filebeat-config.yml)
+Which URL do you navigate to in order to check that the ELK server is running?
+ - The public IP of the JumpboxVM at port 5601
