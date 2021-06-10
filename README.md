@@ -115,11 +115,17 @@ Answer the following questions to fill in the blanks:
   - *The public IP of the JumpboxVM at port 5601*
 
 ### Screenshots
-- ![Homepage](Images/DVWAhomepage.png)
-- ![Images/Filebeatdata.png](Images/Filebeatdata.png)
-- ![Images/KibanaDashboard.png](Images/KibanaDashboard.png)
-- ![Images/NSG_ElkStack.png](Images/NSG_ElkStack.png)
-- ![Images/NSG_Web1-withRedTeamNetworkRules.png](Images/NSG_Web1-withRedTeamNetworkRules.png)
-- ![Images/RedTeamLoadBalancer.png](Images/RedTeamLoadBalancer.png)
-- ![Images/VN_ElkStack.png](Images/VN_ElkStack.png)
-- ![Images/VN_RedTeam.png](Images/VN_RedTeam.png)
+##### Homepage of DVWA
+![Homepage](Images/DVWAhomepage.png)
+##### Filebeat Data Connected
+![Images/Filebeatdata.png](Images/Filebeatdata.png)
+##### Kibana Dashboard
+![Images/KibanaDashboard.png](Images/KibanaDashboard.png)
+##### Network Security Group in Azure
+![Images/NSG_ElkStack.png](Images/NSG_ElkStack.png)
+##### Configuring rules 
+![Images/NSG_Web1-withRedTeamNetworkRules.png](Images/NSG_Web1-withRedTeamNetworkRules.png)
+##### Load Balancer
+![Images/RedTeamLoadBalancer.png](Images/RedTeamLoadBalancer.png)
+##### Virtual Network
+![Images/VN_RedTeam.png](Images/VN_RedTeam.png)
