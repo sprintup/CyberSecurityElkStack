@@ -115,4 +115,11 @@ Answer the following questions to fill in the blanks:
   - *The public IP of the JumpboxVM at port 5601*
 
 ### Screenshots
-![Homepage](Images/DVWAhomepage.png)
+- ![Homepage](Images/DVWAhomepage.png)
+- ![Images/Filebeatdata.png](Images/Filebeatdata.png)
+- ![Images/KibanaDashboard.png](Images/KibanaDashboard.png)
+- ![Images/NSG_ElkStack.png](Images/NSG_ElkStack.png)
+- ![Images/NSG_Web1-withRedTeamNetworkRules.png](Images/NSG_Web1-withRedTeamNetworkRules.png)
+- ![Images/RedTeamLoadBalancer.png](Images/RedTeamLoadBalancer.png)
+- ![Images/VN_ElkStack.png](Images/VN_ElkStack.png)
+- ![Images/VN_RedTeam.png](Images/VN_RedTeam.png)
