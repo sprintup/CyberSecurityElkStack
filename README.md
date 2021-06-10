@@ -115,4 +115,4 @@ Answer the following questions to fill in the blanks:
   - *The public IP of the JumpboxVM at port 5601*
 
 ### Screenshots
-![DVWA homepage.png](Images/DiagramScreenshot.png)
+![DVWA homepage.png](Images/DVWA homepage.png)
