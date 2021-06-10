@@ -113,3 +113,6 @@ Answer the following questions to fill in the blanks:
   - *[filebeat-config.yml](filebeat-config.yml)*
 - Which URL do you navigate to in order to check that the ELK server is running?
   - *The public IP of the JumpboxVM at port 5601*
+
+### Screenshots
+![DVWA homepage.png](Images/DiagramScreenshot.png)
